@@ -1,0 +1,728 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html
+ xmlns:mwsh="http://www.mathworks.com/namespace/mcode/v1/syntaxhighlight.dtd">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="icon" type="image/ico" href="image/gui-lr.ico"/>
+<!--
+This HTML is auto-generated from an M-file.
+To make changes, update the M-file and republish this document.
+      -->
+  <title>GUI, Modelo Luo-Rudy I</title>
+  <meta name="generator" content="MATLAB R2019b">
+  <meta name="date" content="2013-10-30">
+  <meta name="m-file" content="GUI, Modelo Luo-Rudy I">
+  <style>
+body {
+  background-color: white;
+  margin:10px;
+}
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+pre.codeinput {
+  margin-left: 30px;
+}
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.showbuttons {
+  margin-left: 30px;
+  border: solid black 2px;
+  padding: 4px;
+  background: #EBEFF3;
+}
+
+pre.codeoutput {
+  color: gray;
+  font-style: italic;
+}
+pre.error {
+  color: red;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows.  On Gecko-based browsers, the shrink-to-fit doesn't work. */ 
+p,h1,h2,div {
+  /* for MATLAB's browser */
+  width: 600px;
+  /* for Mozilla, but the "width" tag overrides it anyway */
+  max-width: 600px;
+  /* for IE */
+  width:expression(document.body.clientWidth > 620 ? "600px": "auto" );
+}
+
+    </style>
+</head>
+<body>
+<br>
+<div align="center">
+<p align="center">
+<img src="image/GUI-LRI-1.jpg" alt="GUI-Modelo Luo-Rudy I" border="2px" style="max-width:100%;width:auto;height:auto;" title="GUI-Modelo Luo-Rudy I"/>
+</p<></div>
+<br>
+<pre style="font-weight: bold;" wrap="">Se recomienda revisar el art&iacute;culo de Luo and Rudy (1991) en: <a href="https://www.ahajournals.org/doi/abs/10.1161/01.res.68.6.1501" target="_blank">Circulation Research <br>1991;68:1501-1526</a>, para la descripción del modelo i&oacute;nico detallado.</pre>
+<div align="center">
+<h1><big><big>Bienvenid@ Aplicaci&oacute;n GUI - Modelo Luo Rudy I</big></big></h1>
+<br>
+<h2><big><big> GUI - Graphical User Interface, LR-I</big></big></h2>
+</div>
+<big><big><big>Comienza&nbsp; por ejecutar el ambiente Matlab y abrir&nbsp; una ventana de l&iacute;nea de comandos<br>
+En la l&iacute;nea de comandos&nbsp; especifica la ruta de la carpeta donde el archivo: "Luo_Rudy91.m", est&aacute; localizado.
+Por ejemplo, si est&aacute; en la carpeta &lt;GUI-LRI&gt;, dentro de otra llamada &lt;home&gt;, entonces:<br>
+<b>&gt;&gt;&nbsp; cd&nbsp; c:\\home\GUI-LRI</b><br>
+<br>
+Ahora ejecuta el programa principal. Escribe:&nbsp; "Luo_Rudy91" en la l&iacute;nea de comandos y oprime ENTER:<br>
+<b>&gt;&gt; Luo_Rudy91</b><br>
+<br>
+Esto <b>INICIA</b> la interfaz Gr&aacute;fica de Usuario: GUI, LR-I.<br>
+<br>
+El bot&oacute;n <span style="font-weight: bold;">Ayuda</span> es una GUIA para el men&uacute; de opciones.<br>
+<ul><b>Men&uacute; Principal</b>. Parte superior izquierda de GUI, LR-I.
+<li>Selecciona par&aacute;metros y oprime <span style="font-weight: bold;">Inicio </span>para proceder (repite al cambiar par&aacute;metros).</li>
+<li>Si oprimes el bot&oacute;n&nbsp; de <span style="font-weight: bold;">Guardar</span> puedes guardar los datos de la simulaci&oacute;n en formato de archivo Matlab: &lt;<i>nombre_archivo.mat</i>&gt; </li>
+<li>Si oprimes el bot&oacute;n&nbsp; de <span style="font-weight: bold;">Cargar</span> puedes cargar tus archivos propios de simulaci&oacute;n de datos calculados en GUI, LR-I.</li>
+</ul>
+<ul><span style="font-weight: bold;">Opci&oacute;n de ZOOM</span>
+<li> Selecciona el &aacute;rea deseada de la gr&aacute;fica - y da clic con bot&oacute;n izquierdo del &lt;mouse&gt; para ACERCAR (ZOOM in).</li>
+<li> Clic con el bot&oacute;n derecho del &lt;mouse&gt; para ALEJAR (zoom out).</li>
+<li> Al dar clic, en los l&iacute;mites de los ejes en las gr&aacute;ficas cambias el ZOOM por un factor de 2, ya sea para ACERCAR o ALEJAR.</li>
+</ul>
+<div align="center">
+<p align="center">
+<img src="image/GUI-LRI-4.jpg" alt="GUI-Modelo Luo-Rudy I" border="2px" style="max-width:100%;width:auto;height:auto;" title="GUI-Modelo Luo-Rudy I"/>
+</p<></div>
+<br>
+<p class="footer">
+/***************************************************************************<br>
+<div style="text-align: center;">
+    <h3>All content on this App: GUI - Modelo Luo-Rudy I, is made available under the <a target="_blank" href="http://www.gnu.org/licenses/gpl-3.0.html" rel="license"> GNU General Public License </a>, and <a target="_blank" href="http://creativecommons.org/licenses/by-nc/2.5/mx/"
+            rel="license"><img src="image/cc.png" alt="Creative Commons License" width="88" height="31" style="border-width: 0pt;" class="img-responsive atto_image_button_middle"></a></h3>
+</div>
+<hr style="width: 100%; height: 2px;">
+<div style="text-align: justify;">El c&oacute;digo base de la presente obra fue creado por: <a href="mailto:rudy@wustl.edu" target="_blank">Leonid Livshitz & Yoram Rudy</a>, Copyright (C) 2006, bajo los t&eacute;rminos y condiciones establecidos por <a target="_blank" href="http://www.gnu.org/licenses/gpl-3.0.html" rel="license">GNU - General Public License (GPL)</a>; implicando que toda la presente obra publicada y su uso est&eacute; bajo dicha Licencia de P&uacute;blico en General (GPL, Versi&oacute;n 3), establecida el 29 de junio de 2007; se incluye archivo <a href="gpl-3.0.txt" target="_blank">gpl-3.0.txt</a> en carpeta principal de la aplicaci&oacute;n GUI-LRI. El matemático mexicano <a href="mailto:osman@educart.org" target="_blank">Osman Villanueva Garc&iacute;a</a>, Copyright (C) 2013, realizó modificaciones al c&oacute;digo base para desarrollar la aplicaci&oacute;n: GUI - Modelo i&oacute;nico Luo-Rudy I, &nbsp;y desde ese momento se incluye a la presente obra el respaldo de la <a rel="license" title="Licencia creative Commons" target="_blank" href="http://creativecommons.org/licenses/by-nc/2.5/mx/">Licencia Creative Commons Atribución-NoComercial 2.5, M&eacute;xico</a>.</div>
+<p></p>
+<hr style="width: 100%; height: 2px;">
+<p></p>
+<h2 style="text-align: center;">Atribución-No comercial 2.5 México</h2>
+<p style="text-align: right;"><img src="image/mx.png" alt="México - MX " width="54" height="31" class="img-responsive atto_image_button_text-bottom"></p>
+<h3>Eres libre de:</h3>
+<ul>
+    <li>
+        <p style="margin-bottom: 0cm; text-align: left;">Copiar, distribuir y comunicar públicamente la obra</p>
+    </li>
+    <li>
+        <p style="text-align: left;">Hacer obras derivadas</p>
+    </li>
+</ul>
+<h3>Bajo las condiciones siguientes:</h3>
+<ul>
+    <li>
+        <p style="text-align: left;"><a name="attribution-container "></a><strong>Atribución</strong>. Debes reconocer la autor&iacute;a de la obra en los términos especificados por el propio autor y licencias establecidas.</p>
+        <p style="text-align: left;"><strong> </strong><strong style="font-style: italic;">Attribute this work<a name="Atributos "></a>:</strong><span style="font-style: italic;"> What does "Attribute this work " mean? The page you came from contained embedded licensing metadata, including how the creator wishes to be attributed for re-use. You can use the HTML here to cite the work. Doing so will also include metadata on your page so that others can find the original work as well.</span></p>
+    </li>
+</ul>
+<ul>
+    <li>
+        <p style="text-align: left;"><strong>No comercial</strong>. No puedes utilizar esta obra para fines comerciales.</p>
+    </li>
+    <li>
+        <p style="text-align: left;">Al reutilizar o distribuir la obra, se tiene que dejar sustentado los t&eacute;rminos de la licencia de la presente obra.</p>
+    </li>
+    <li>
+        <p style="text-align: left; margin-bottom: 0cm;">Alguna de estas condiciones puede no aplicarse si se obtiene el permiso del titular de los derechos de autor</p>
+    </li>
+    <li>
+        <p style="text-align: left; margin-bottom: 0cm;">Nada en esta licencia menoscaba o restringe los derechos morales del autor.</p>
+    </li>
+</ul>
+<hr style="width: 100%; height: 2px;">
+<p style="text-align: justify;">Advertencia: Esta declaración no es una licencia. Es simplemente una referencia sencilla para ayudarte a entender el Código Legal (la licencia completa). Esto es únicamente una interfaz gráfica del Código Legal de fondo de la aplicación GUI - Modelo LR-I. Esta declaración no tiene ninguna validez legal y sus elementos, de hecho, no son contemplados en el texto de la licencia.</p>
+<p><a name="advertencia "></a></p>
+<p style="margin-top: 1.06cm; text-align: center;"><strong>Los derechos derivados de usos legítimos u otras limitaciones reconocidas por ley no se ven afectados por lo anterior.</strong></p>
+<p style="margin-bottom: 0cm; text-align: center;">&nbsp;</p>
+<p style="margin-bottom: 0cm; text-align: center;">Esto es un resumen f&aacute;cilmente legible del <a href="http://creativecommons.org/licenses/by-nc/2.5/mx/legalcode" target="_blank">texto legal - Licencia completa</a>.</p>
+<p style="margin-bottom: 0cm; text-align: center;">Aplicación GUI - <a href="https://github.com/osmanmx/GUI-LRI" target="_blank">Modelo i&oacute;nico Luo-Rudy I</a></p>
+<p></p>
+<hr style="width: 100%; height: 2px;">
+<h3 style="text-align: center; font-weight: bold; font-style: italic;">Atentamente:<br><a href="mailto:osman@educart.org" target="_blank">Osman Villanueva García</a><br>
+<a href="https://www.hashtags.org/definition/ComparteDisfrutaAprende/" target="_blank">COMPARTE-DISFRUTA-APRENDE</a></h3>
+***************************************************************************/</big></big>
+</p>
+<br>
+<p class="footer">Published with MATLAB® R2019b<br>
+</p>
+<!--
+##### SOURCE BEGIN #####
+%function [currents,State,Ti]=mainLRd2k(data)
+
+load LRd2kINI %% load table of initial conditions
+[i,j]=min(abs(X0(:,1)-data.bcl));
+if data.G_gap==0,
+    x0=X0(j,2:end);
+        else
+        x0=[X0(j,2:end) X0(j,2:end)];
+end
+
+
+State=[];
+% stimul
+Stm=[];
+%return
+
+Constant3k %% constants 
+
+%opts = odeset('RelTol',1e-4,'AbsTol',1e-4);
+%opts = odeset('MaxStep',1);
+%opts = odeset('Refine',2);
+Ti=[];
+opts=[];
+%opts = odeset('InitialStep',1e-1);
+% opts = odeset('OutputFcn',@odephas3,'InitialStep',1e-5);
+%opts= odeset('OutputFcn',@odeplot)
+Reliz=[];
+tcicr=1; %% initial time of dvdtmax
+h4 = waitbar(0,' Matlab is working hard, Please wait ...');
+data.st=0;
+data.Is=80;
+data.fnsh=0.5;
+for p=1:data.freq
+    data.tcicr=tcicr;
+%%
+%% LRd2cell
+
+    [t,X]=ode15s('LRd2cell',[0  data.bcl],x0,opts,data);
+%%
+   
+    Ti=[Ti; t+(data.bcl*(p-1))];
+    State=[State; X];
+    St=data.Is*ones(1,length(t));
+    St((find(t>data.fnsh)))=0;
+    Stm=[Stm  St];
+
+    x0=[X(end,1:end)];
+    waitbar(p/data.freq,h4)
+   % [curr]=dvdtmax2k(X,t,k_o,na_o);
+    [curr]=print_LRd3knew(X,t,Stm,tcicr,data);
+    tcicr=curr.tcicr; %% time of dvdtmax
+    v=t;
+    v((find(v<tcicr)))=0;
+    Reliz=[Reliz; v];
+end
+close(h4)
+
+%% Output of fluxes and currents
+[currents]=print_LRd3knew(State(:,1:16),Ti,Stm,Reliz,data);
+%%
+%% Derivatives calculation
+function dy=LRd2cell(t,y,flags,data)
+
+% V=y(1)  ;H = y(2);m = y(3);  J=y(4); d=y(5);f=y(6); xr=y(7); 
+% ca_i=y(8); na_i=y(9);k_i=y(10);jsr=y(11); nsr=y(12);xs=y(13);B=y(14);G=y(15);xs2=y(16);
+
+if t>data.st && t<data.st+data.fnsh 
+    In=data.Is;
+else
+    
+    
+    
+    
+    In=0;
+end
+
+if data.G_gap==0
+    [dV,dH, dm,dJ,dD,df,dxr, dcai,dnai,dki ,djsr,dnsr,dxs,dB,dG,dxs2]=first_cell(y(1:16),0,data,t,In);
+
+    dy = [dV;dH; dm;dJ;dD;df;dxr; dcai;dnai;dki ;djsr;dnsr;dxs;dB;dG;dxs2];
+ 
+else
+
+        [dV,dH, dm,dJ,dD,df,dxr, dcai,dnai,dki ,djsr,dnsr,dxs,dB,dG,dxs2]=first_cell(y(1:16),y(17),data,t,In);
+data.Is=0;
+ [dV2,dH2, dm2,dJ2,dD2,df2,dxr2, dcai2,dnai2,dki2 ,djsr2,...
+     dnsr2,dx2s,dB2,dG2,dx2s2]=first_cell(y(17:32),y(1),data,t,0);
+
+
+
+dy = [dV;dH; dm;dJ;dD;df;dxr; dcai;dnai;dki ;djsr;dnsr;dxs;dB;dG;dxs2;...
+    dV2;dH2; dm2;dJ2;dD2;df2;dxr2; dcai2;dnai2;dki2 ;djsr2;dnsr2;dx2s;dB2;dG2;dx2s2];%dyd;dz
+end
+
+
+function [dV,dH, dm,dJ,dD,df,dxr, dcai,dnai,dki ,djsr,dnsr,dxs,dB,dG,dxs2]=first_cell(y,V_second,data,t,In)
+V=y(1)  ;H = y(2);m = y(3);  J=y(4); d=y(5);f=y(6); xr=y(7);
+ca_i=y(8); na_i=y(9);k_i=y(10);jsr=y(11); nsr=y(12);xs=y(13);B=y(14);G=y(15);xs2=y(16);
+% ydv=y(17); zdv=y(18);
+
+l = 0.01;       % Length of the cell (cm)
+a = 0.0011;     % Radius of the cell (cm)
+
+vcell = 1000*pi*a*a*l;     %   3.801e-5 uL   % Cell volume (uL)
+ageo = 2*pi*a*a+2*pi*a*l;  %   7.671e-5 cm^2    % Geometric membrane area (cm^2)
+acap = ageo*2;             %   1.534e-4 cm^2    % Capacitive membrane area (cm^2)
+vmyo = vcell*0.68;    % Myoplasm volume (uL)
+vmito = vcell*0.26;  % Mitochondria volume (uL)
+vsr = vcell*0.06;    % SR volume (uL)
+vnsr =  vsr*0.92;   % NSR volume (uL)
+vjsr=  vsr*0.08;   % JSR volume (uL)
+F=96485; % Faraday number
+k_o=data.k_o;
+na_o=data.na_o;
+st=data.st;
+Is=data.Is;
+tcicr=data.tcicr;
+G_gap=data.G_gap;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[ina,am,bm,aH,bH,aj,bj] =comp_ina94(V,m,H,J,na_i,na_o);
+[inab] =comp_inab99(V,na_i,na_o);
+[ilca,ilcana,ilcak,taud,dss,tauf,fss]=comp_ical95(V,d,f,ca_i,na_i,k_i,k_o,na_o);
+[inaca]=comp_inaca2000(V,ca_i,na_i,na_o); %%
+[inak]=comp_inak2000(V,na_i,k_o,na_o);
+% [ikna]=comp_ikna2000(V,na_i,k_i,k_o);
+%   [insna,insk]=comp_insca94(V,ca_i,na_i,k_i,k_o);%% nonspecific Ca activated
+[iks,xss,tauxs]=comp_iks2000(V,xs,xs2,ca_i,na_i,k_i,k_o,na_o);
+[icat,bss,gss,taub,taug]=comp_icat2000(V,B,G,ca_i);
+[ikr,xrss,tauxr]= comp_ikr95(V,xr,k_i,k_o);
+[ikti] = comp_ikti(V,k_i,k_o);% time indep
+[ikp] = comp_ikp(V,k_i,k_o); % plato
+% [ito,ay,by,az,bz]=comp_ito99(V,k_i,ydv,zdv,k_o);
+[ikatp]=comp_ikatp(V,k_i,k_o);
+%% Call functions
+[buffer,bcsqn,ileak,iup,ipca,icab,itr]=calcium_in(V,nsr,jsr,ca_i);
+
+caiont = ilca+icab+ipca-2*inaca+icat;
+naiont = ina+inab+3*inaca+ilcana+3*inak;
+kiont = ikr+iks+ikti+ikp+ilcak-2*inak-In-G_gap*(V_second-V);%+ito;+insna+insk+ikna
+irelcicr=ca_cicr2000(jsr,ca_i,caiont,t-tcicr);
+totI = -(naiont+kiont+caiont);
+
+%% Derivatives of state variables first cell
+%%
+dV =totI/1;
+dH=aH*(1-H)-bH*H;
+dm=am*(1-m)-bm*m;
+dJ=aj*(1-J)-bj*J;
+dD=(dss-d)/taud;
+df=(fss-f)/tauf;
+dxr=(xrss-xr)/tauxr;
+dxs=(xss-xs)/tauxs;
+dxs2=(xss-xs2)/tauxs/4;
+%   dyd=ay*(1-ydv)-by*ydv;
+%   dz=az*(1-zdv)-bz*zdv;
+dnai=-naiont*acap/F/vmyo;
+dki=-kiont*acap/F/vmyo;
+dB=(bss-B)/taub;
+dG=(gss-G)/taug;
+dcai =-(caiont*acap/2/F/vmyo+(iup-ileak)*vnsr/vmyo-irelcicr*vjsr/vmyo)./buffer;%
+dnsr = iup-itr*vjsr/vnsr-ileak;
+djsr = ( itr-irelcicr)./bcsqn;
+
+% RETURN DERIVATIVES
+% dy = [dV;dH; dm;dJ;dD;df;dxr; dcai;dnai;dki ;djsr;dnsr;dxs;dB;dG;dxs2];%dyd;dz
+
+
+%% Calciun induced calcium release
+function [irelcicr]=ca_cicr2000(jsr,cai,caiont,tcicr)
+if  tcicr<0
+    irelcicr=0;
+else
+    tauon = 0.5;         % Time constant of activation of Ca release from JSR (ms) 2msec in LRD94
+    tauoff = 0.5;        % Time constant of deactivation of Ca release from JSR (ms)
+    %
+    grelbarjsrol=150;            % Rate constant of Ca release from JSR due to overload (ms^-1)
+
+
+    %        magrel;                  % Magnitude of Ca release
+    on = 1/(1+exp((-tcicr+4)/tauon));
+    off = 1-1/(1+exp((-tcicr+4)/tauoff));
+    magrel = 1./(1+exp((caiont+5)/0.9));
+
+
+    irelcicr = grelbarjsrol*on*off*magrel*(jsr-cai);
+
+end
+%%
+
+%% L-type calcium channel
+function [ilca,ilcana,ilcak,taud,dss,tauf,fss]=comp_ical95(v,d,f,cai,nai,ki,k_o,na_o)
+% Calculates Currents through L-Type Ca Channel
+
+%na_o=140;
+
+frt=0.03743588350780;
+F=96485;   ca_o=1.8;
+kmca=6e-4;     % Half-saturation concentration of Ca channel (mM)
+
+gacai=1;         % Activity coefficient of Ca
+gacao=0.341;     % Activity coefficient of Ca
+pna=6.75e-7; % Permiability of membrane to Na (cm/s)
+ganai=0.75;      % Activity coefficient of Na
+ganao=0.75;      % Activity coefficient of Na
+pk=1.93e-7;  % Permiability of membrane to K (cm/s)
+pca=5.4e-4;     % Permiability of membrane to Ca (cm/s)
+gaki=0.75;       % Activity coefficient of K
+gako=0.75;       % Activity coefficient of K
+
+dss=1/(1+exp(-(v+10)/6.24));
+taud=dss*(1-exp(-(v+10)/6.24))/(0.035*(v+10));
+fss=1/(1+exp((v+32)/8))+(0.6)/(1+exp((50-v)/20));
+
+tauf=1/(0.0197*exp(-(0.0337*(v+10))^2)+0.02);
+
+
+ibarca= pca*4*(v*F*frt)*((gacai*cai*exp(2*v*frt)-gacao*ca_o)/(exp(2*v*frt)-1));
+ibarna= pna*(v*F*frt)*((ganai*nai*exp((v*frt))-ganao*na_o)/(exp(v*frt)-1));
+ibark= pk*(v*F*frt)*((gaki*ki*exp(v*frt)-gako*k_o)/(exp(v*frt)-1));
+
+fca = 1/(1+cai/kmca);
+
+ilca   = d*f*fca*ibarca;
+ilcana = d*f*fca*ibarna;
+ilcak = d*f*fca*ibark;
+%%
+
+%% Fast and background Sodium channels
+function [inab]=comp_inab99(V,Na_i,na_o)
+
+%na_o=140;
+frt=0.03743588350780;
+ENa =log(na_o/Na_i)/frt;       % Nernst potential of Na, mV
+
+gnab = 0.004;
+
+
+inab = gnab*(V-ENa);
+
+
+
+function [In,am,bm,ah,bh,aj,bj]=comp_ina94(V,m,H,J,Na_i,na_o)
+
+%na_o=140;
+frt=0.03743588350780;
+ENa =log(na_o/Na_i)/frt;       % Nernst potential of Na, mV
+GNa= 16;                          % mS/cm^2
+
+gNa = GNa*m*m*m*H*J;
+In = gNa*(V-ENa);
+
+
+
+if V >= -40
+    ah = 0.0;
+    aj = 0.0;
+    bh = 1/(0.13*(1+exp((V+10.66)/(-11.1))));
+    bj = 0.3*exp(-2.535e-7*V)/(1+exp(-0.1*(V+32)));
+else
+    ah = 0.135*exp((80+V)/(-6.8));
+    aj = (-1.2714e5*exp(0.2444*V)-3.474e-5*exp(-0.04391*V))...
+        *(V+37.78)/(1+exp(0.311*(V+79.23)));
+    bh = 3.56*exp(0.079*V)+3.1*1e5*exp(0.35*V);
+    bj = 0.1212*exp(-0.01052*V)/(1+exp(-0.1378*(V+40.14)));
+end
+
+am = 0.32*(V+47.13)/(1-exp(-0.1*(V+47.13)));
+bm = 0.08*exp(-V/11);
+
+%% Transient calcium channel
+
+
+function [icat,bss,gss,taub,taug]=comp_icat2000(v,b,g,cai)
+%Calculates Currents through T-Type Ca Channel
+
+frt= 0.03743588350780; ca_o=1.8;
+bss = 1/(1+exp(-(v+14.0)/10.8));
+taub = 3.7+6.1/(1+exp((v+25.0)/4.5));
+
+gss = 1/(1+exp((v+60.0)/5.6));
+if (v<=0)
+    taug = -0.875*v+12.0;
+else
+    taug = 12.0;
+end
+
+
+gcat = 0.05;
+eca = log(ca_o/cai)/2/frt;
+
+icat = gcat*b*b*g*(v-eca);
+
+
+%% Time-independent and plato potassium current
+
+
+function [ikti] = comp_ikti(V,K_i,k_o)
+% IK1    Time-independent potassium current
+
+frt= 0.03743588350780;
+
+GK1_ = 0.75*sqrt(k_o/5.4);
+EK1 = log(k_o/K_i)/frt;
+
+ak1 = 1.02/(1+exp(0.2385*(V-EK1-59.215)));
+bk1 = (0.49124*exp(0.08032*(V-EK1+5.476))+exp(0.06175*(V-EK1-594.31)))/...
+    (1+exp(-0.5143*(V-EK1+4.753)));
+
+gK1 = GK1_*ak1/(ak1+bk1);
+ikti = gK1*(V-EK1);
+
+function [ikp] = comp_ikp(V,K_i,k_o)
+frt= 0.03743588350780;
+
+GK1_ = 0.75*sqrt(k_o/5.4);
+EK1 = log(k_o/K_i)/frt;
+gkp=0.00552;
+ikp = gkp*(V-EK1)/(1+exp((7.488-V)/5.98)); % plato K 95
+
+
+%% Slow Activating potassium Current
+
+
+function [iks,xss,tauxs]=comp_iks2000(v,xs1,xs2,cai,nai,ki,k_o,na_o);
+
+
+frt= 0.03743588350780;
+
+
+prnak=0.01833;
+gks = 0.433*(1+0.6/(1+(3.8e-5/cai)^1.4));
+eks = log((k_o+prnak*na_o)/(ki+prnak*nai))/frt;
+
+xss = 1/(1+exp(-(v-1.5)/16.7));
+
+tauxs = 1/(0.0000719*(v+30)/(1-exp(-0.148*(v+30)))+0.000131*(v+30)/(exp(0.0687*(v+30))-1));
+
+
+iks = gks*xs1*xs2*(v-eks);
+%%
+%% Rapidly Activating Potassium Current
+
+
+function [ikr,xrss,tauxr]= comp_ikr95(v,xr,ki,k_o)
+
+%Calculates Rapidly Activating K Current
+frt= 0.03743588350780;
+
+gkr = 0.02614*sqrt(k_o/5.4);
+ekr = log(k_o/ki)/frt;
+r = 1/(1+exp((v+9)/22.4));
+
+ikr = gkr*xr*r*(v-ekr);
+xrss = 1/(1+exp(-(v+21.5)/7.5));
+tauxr = 1/(0.00138*(v+14.2)/(1-exp(-0.123*(v+14.2)))+0.00061*(v+38.9)/(exp(0.145*(v+38.9))-1));
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%  Intracellular Calcium subsystem currents and buffers
+function [buffer,bcsqn,ileak,iup,ipca,icab,itr]=calcium_in(v,nsr,jsr,ca_i);
+
+
+tautr = 180;  % Time constant of Ca transfer from NSR to JSR (ms)
+ca_o=1.8; frt= 0.03743588350780; % F/R*T
+
+% NSR Ca Ion Concentration Changes */
+kmup = 0.00092;    % Half-saturation concentration of iup (mM)
+iupbar = 0.00875;  % Max. current through iup channel (mM/ms)
+nsrbar = 15;       % Max. [Ca] in NSR (mM)
+ibarpca = 1.15; % Max. Ca current through sarcolemmal Ca pump (uA/uF)
+kmpca = 0.5e-3; % Half-saturation concentration of sarcolemmal Ca pump (mM)
+cmdnbar = 0.050;   % Max. [Ca] buffered in CMDN (mM)
+trpnbar = 0.070;   % Max. [Ca] buffered in TRPN (mM)
+kmcmdn = 0.00238;  % Equilibrium constant of buffering for CMDN (mM)
+kmtrpn = 0.0005;   % Equilibrium constant of buffering for TRPN (mM)
+
+csqnbar = 10;      % Max. [Ca] buffered in CSQN (mM)
+kmcsqn = 0.8;      % Equilibrium constant of buffering for CSQN (mM)
+
+bcsqn = (1+csqnbar*kmcsqn/(jsr+kmcsqn)^2);
+buffer=(1+ cmdnbar*kmcmdn/(ca_i+kmcmdn)^2+trpnbar*kmtrpn/(ca_i+kmtrpn)^2);
+ipca = (ibarpca*ca_i)/(kmpca+ca_i);	 % sarcolema pump Ca SERCA
+icab = 0.003016*(v- log(ca_o/ca_i)/2/frt); % background Ca
+
+ileak = iupbar/nsrbar*nsr;
+iup = iupbar*ca_i/(ca_i+kmup);
+itr = (nsr-jsr)/tautr;
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Nonspecific Ca-activated Current
+function [insna,insk]=comp_insca94(v,cai,nai,ki,k_o,na_o)
+
+%Nonspecific Calcium -activated Current */
+%        insna;     % Non-specific Na current (uA/uF)
+%        insk;      % Non-specific K current (uA/uF)
+%        ibarnsna;  % Max. Na current through NSCa channel (uA/uF)
+%        ibarnsk;   % Max. K current through NSCa channel (uA/uF)
+F=96485;    %na_o=140;   frt= 0.03743588350780;
+
+
+ganai = 0.75;      % Activity coefficient of Na
+ganao = 0.75;      % Activity coefficient of Na
+pk = 1.93e-7;  % Permiability of membrane to K (cm/s)
+gaki = 0.75;       % Activity coefficient of K
+gako = 0.75;       % Activity coefficient of K
+
+
+pnsca = 1.75e-7;  % Permiability of channel to Na and K (cm/s)
+kmnsca = 0.0012;      % Half-saturation concentration of NSCa channel (mM
+
+ibarnsna = pnsca*(v*F*frt)*(ganai*nai*exp(v*frt)-ganao*na_o)/(exp(v*frt)-1);
+ibarnsk =  pnsca*(v*F*frt)*(gaki*ki*exp(1*v*frt)-gako*k_o)/(exp(v*frt)-1);
+
+insna = ibarnsna/(1+(kmnsca/cai)^3);
+insk = ibarnsk/(1+(kmnsca/cai)^3);
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Calculates Na-Ca Exchanger Current
+
+function [Inaca]=comp_inaca2000(v,cai,nai,na_o)
+%Calculates Na-Ca Exchanger Current
+frt= 0.03743588350780;
+ca_o=1.8;  %na_o=140;
+%    inaca;               % NaCa exchanger current (uA/uF)
+c1 =0.00025;   % Scaling factor for inaca (uA/uF)
+c2 = 0.0001;   % Half-saturation concentration of NaCa exhanger (mM)
+gammas = 0.15;  % Position of energy barrier controlling voltage dependance of inaca
+Inaca = c1*exp((gammas-1)*v*frt)*((exp(v*frt)*nai^3*ca_o-na_o^3*cai)/...
+    (1+c2*exp((gammas-1)*v*frt)*(exp(v*frt)*nai^3*ca_o+na_o^3*cai)));
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Sodium-Potassium Pump
+function [inak]=comp_inak2000(v,nai,k_o,na_o)
+% Sodium-Potassium Pump */
+%na_o=140;
+frt= 0.03743588350780;
+
+%        inak;    % NaK pump current (uA/uF)
+%        fnak;    % Voltage-dependance parameter of inak
+%        sigma;   % [Na]o dependance factor of fnak
+%     ibarnak    % Max. current through Na-K pump (uA/uF)
+kmnai = 10;    % Half-saturation concentration of NaK pump (mM)
+kmko = 1.5;    % Half-saturation concentration of NaK pump (mM)
+ibarnak = 2.25;
+
+sigma = (exp(na_o/67.3)-1)/7;
+
+fnak = 1/(1+0.1245*exp((-0.1*v*frt))+0.0365*sigma*exp(-v*frt));
+
+inak = ibarnak*fnak*(1/(1+(kmnai/nai)^2))*(k_o/(k_o+kmko));
+%%
+
+
+%% Na-activated K Current
+function [ikna]=comp_ikna2000(v,nai,ki,k_o)
+%Calculates Na-activated K Current
+%  /* Na-Activated K Channel */
+%        ikna;   % Na activated K channel
+%        pona;   % Open probability dependant on Nai
+%        pov;    % Open probability dependant on Voltage
+%        ekna;   % Reversal potential
+
+
+gkna = 0.12848;   % Maximum conductance (mS/uF)
+nkna = 2.8;       % Hill coefficient for Na dependance
+kdkna = 66;       % Dissociation constant for Na dependance(mM)
+frt= 0.03743588350780;
+
+ekna = log(k_o/ki)/frt;
+pona = 0.85/(1+(kdkna/nai)^(2.8));
+pov = 0.8-0.65/(1+exp((v+125)/15));
+ikna = gkna*pona*pov*(v-ekna);
+%%
+
+%% ATP-sensitive K current
+function [ikatp]=comp_ikatp(v,ki,k_o)
+%        ikatp;    % ATP-sensitive K current (uA/uF)
+%        ekatp;    % K reversal potential (mV)
+%        gkbaratp; % Conductance of the ATP-sensitive K channel (mS/uF)
+%        gkatp;    % Maximum conductance of the ATP-sensitive K channel (mS/uF)
+%        patp;     % Percentage availibility of open channels
+natp = 0.24;          % K dependence of ATP-sensitive K current
+nicholsarea = 0.00005; % Nichol's ares (cm^2)
+atpi = 3;             % Intracellular ATP concentraion (mM)
+hatp = 2;             % Hill coefficient
+katp = 0.250;         % Half-maximal saturation point of ATP-sensitive K current (mM)
+
+% /* Note: If you wish to use this current in your simulations, there are additional       */
+% /* changes which must be made to the code as detailed in Cardiovasc Res 1997;35:256-272  */
+frt= 0.03743588350780;
+ekatp = log(k_o/ki)/frt;
+gkatp = 0.000195/nicholsarea;
+patp = 1/(1+((atpi/katp)^hatp));
+gkbaratp = gkatp*patp*((k_o/4)^natp);
+
+ikatp = gkbaratp*(v-ekatp);
+%%
+%% Transient Outward Current
+function [ito,aydv,bydv,azdv,bzdv]=comp_ito(v,ki,ydv,zdv,k_o)
+% Ito Transient Outward Current (Dumaine et al. Circ Res 1999;85:803-809) */
+%        ito;      % Transient outward current
+%        gitodv;   % Maximum conductance of Ito
+%        ekdv;     % Reversal Potential of Ito
+%        rvdv;      % Time independant voltage dependence of Ito
+%        zdv;       % Ito activation
+%        azdv;      % Ito alpha-z rate constant
+%        bzdv;      % Ito beta-z rate constant
+%        tauzdv;   % Time constant of z gate
+%        zssdv;     % Steady-state value of z gate
+%        ydv;       % Ito inactivation
+%        aydv;      % Ito alpha-y rate constant
+%        bydv;      % Ito beta-y rate constant
+%        tauydv;   % Time constant of y gate
+%        yssdv;     % Steady-state value of y gate
+frt= 0.03743588350780;
+gitodv = 0.5;
+ekdv = log(k_o/ki)/frt;
+rvdv = exp(v/100);
+
+azdv = (10*exp((v-40)/25))/(1+exp((v-40)/25));
+bzdv = (10*exp(-(v+90)/25))/(1+exp(-(v+90)/25));
+
+aydv = 0.015/(1+exp((v+60)/5));
+bydv = (0.1*exp((v+25)/5))/(1+exp((v+25)/5));
+
+ito=gitodv*zdv^3*ydv*rvdv*(v-ekdv);
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Calcium overload
+function [ireljsrol]=ca_over94(jsr,cai,t)
+
+
+
+tauon =2;         % Time constant of activation of Ca release from JSR (ms)
+tauoff = 2;        % Time constant of deactivation of Ca release from JSR (ms)
+if t<0
+
+    ireljsrol =0;
+
+else
+    %  disp('over')
+    ireljsrol =  4*(1-exp(-t/tauon))*exp(-t/tauoff)*(jsr-cai);
+end
+%%
+##### SOURCE END #####
+-->
+</body>
+</html>
