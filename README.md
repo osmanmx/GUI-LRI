@@ -20,13 +20,15 @@ Ahora ejecuta el programa principal. Escribe:&nbsp; "Luo_Rudy91" en la l&iacute;
 <br>
 Este comando desde el ambiente Matlab, inicializa la interfaz Gr&aacute;fica de Usuario: GUI, Modelo Luo-Rudy I.<br>
 <br>
-El bot&oacute;n <span style="font-weight: bold;">Ayuda</span> es una GUIA para el men&uacute; de opciones.<br>
-<ul><b>Men&uacute; Principal</b>. Parte superior izquierda de GUI, LR-I.
-<li>Selecciona par&aacute;metros y oprime <span style="font-weight: bold;">Inicio </span>para proceder (repite al cambiar par&aacute;metros).</li>
-<li>Si oprimes el bot&oacute;n&nbsp; de <span style="font-weight: bold;">Guardar</span> puedes guardar los datos de la simulaci&oacute;n en formato de archivo Matlab: &lt;<i>nombre_archivo.mat</i>&gt; </li>
-<li>Si oprimes el bot&oacute;n&nbsp; de <span style="font-weight: bold;">Cargar</span> puedes cargar tus archivos propios de simulaci&oacute;n de datos calculados en GUI, LR-I.</li>
+El bot&oacute;n <b>Ayuda</b> es una GUIA para el men&uacute; de opciones.<br>
+<b>Men&uacute; Principal</b>. Parte superior izquierda de GUI, LR-I.
+    <ul>
+<li>Selecciona par&aacute;metros y oprime <b>Inicio </b>para proceder (repite al cambiar par&aacute;metros).</li>
+<li>Si oprimes el bot&oacute;n&nbsp; de <b>Guardar</b> puedes guardar los datos de la simulaci&oacute;n en formato de archivo Matlab: &lt;<i>nombre_archivo.mat</i>&gt; </li>
+<li>Si oprimes el bot&oacute;n&nbsp; de <b>Cargar</b> puedes cargar tus archivos propios de simulaci&oacute;n de datos calculados en GUI, LR-I.</li>
 </ul>
-<ul><span style="font-weight: bold;">Opci&oacute;n de ZOOM</span>
+<b>Opci&oacute;n de ZOOM</b>
+    <ul>
 <li> Selecciona el &aacute;rea deseada de la gr&aacute;fica - y da clic con bot&oacute;n izquierdo del &lt;mouse&gt; para ACERCAR (ZOOM in).</li>
 <li> Clic con el bot&oacute;n derecho del &lt;mouse&gt; para ALEJAR (zoom out).</li>
 <li> Al dar clic, en los l&iacute;mites de los ejes en las gr&aacute;ficas cambias el ZOOM por un factor de 2, ya sea para ACERCAR o ALEJAR.</li>
